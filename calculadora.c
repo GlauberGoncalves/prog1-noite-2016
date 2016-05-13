@@ -29,53 +29,36 @@ float calcular(char num1[], char num2[], char operacao)
 
 }
 
-void recebe_dados( char numero[], char operacao, int muda_numero)
+char recebe_numero( char numero[])
 {
 	char digitado, cont;
- do
- {
-	
-	digitado = getchar();
-	
-	if (digitado == '+' || digitado == '-' || digitado == '*' || digitado == '/')
+	do
 	{
-		operacao = digitado;
-		muda_numero = 1;
-		printf("\n%c\n", operacao);
-	}	
-	else if (digitado == 13)
-	{
-		
-		
-	}
-	else 
-	{
-		numero[cont] = digitado;
-		cont++;
-		system("clear");
-		printf("%c", numero[cont]);
-	}
-  }while(1);
-	
+		digitado = getchar();
+			if (digitado == '+' || digitado == '-' || digitado == '*' || digitado == '/' || digitado == '=')
+			{				
+				break;
+			}else
+				{
+					numero[cont] = digitado;
+					system("clear");
+					printf("%s", numero);
+					cont++;
+				}
+	}while(1);
+ return digitado;
 }
 
 int main()
 {
-	char char_numero[12], operacao;
-	float numero[20], resultado;
-	int muda_numero, cont;
+		char numero1[9], numero2[9], operacao;
 
-	cont = 0;
+		operacao = recebe_numero( numero1 );
+		printf("\n%c\n", operacao);
+		recebe_numero( numero2);
+		printf("\n-------------\n");
+		calcular(numero1, numero2, operacao);
 
-// inicio do programa	
-// Recebe o primeiro numero digitado pelo usuario ea operação
-/*	do{
-		recebe_dados( char_numero[cont], operacao, muda_numero);
-		cont++;
-		printf("%c", char_numero);
-	}while(muda_numero == 0 || cont == 10);
-*/	
-
-recebe_dados(char_numero, operacao, muda_numero);
-
+	
+	return 0;
 }
