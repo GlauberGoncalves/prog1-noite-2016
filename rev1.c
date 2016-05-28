@@ -23,5 +23,5 @@ int main()
   
     printf("\nA soma é %d\n", myboo(a , b));
     
-    return 1;
+    return 0;
 }

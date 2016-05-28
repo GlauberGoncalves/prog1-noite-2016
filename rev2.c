@@ -47,4 +47,5 @@ int main()
     
     ordena(quantidade, numero);
 
+    return 0;
 }
